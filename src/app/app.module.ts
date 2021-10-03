@@ -10,6 +10,7 @@ import { ROOT_REDUCERS } from './shared/store';
 import { EffectsModule } from '@ngrx/effects';
 import { HttpClientModule } from '@angular/common/http';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { TodoEffects } from './shared/store/todos.effetcs';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,7 +21,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     MaterialModule,
     HttpClientModule,
     StoreModule.forRoot(ROOT_REDUCERS),
-    EffectsModule.forRoot([]),
+    EffectsModule.forRoot([TodoEffects]),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
       autoPause: true,

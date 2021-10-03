@@ -7,12 +7,7 @@ export interface TodosState {
 }
 
 export const TODOS_INITIAL_STATE = {
-  data: [
-    {
-      message: 'Manger une pizza',
-      done: false,
-    },
-  ],
+  data: [],
 };
 
 export const todoFeatureKey = 'todos';
