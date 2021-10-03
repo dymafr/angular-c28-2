@@ -1,6 +1,17 @@
 import { createAction, props } from '@ngrx/store';
 import { Todo } from '../interfaces/todo.interface';
 
+export const fetchTodosAction = createAction('[ todos ] fetch todos');
+export const fetchTodosSuccessAction = createAction(
+  '[ todos ] fetch todos success',
+  props<{ todos: Todo[] }>()
+);
+
+export const errorTodoAction = createAction(
+  '[ todos ] error todos',
+  props<{ error: any }>()
+);
+
 export const addTodoAction = createAction(
   '[ todos ] add todo',
   props<{ todo: Todo }>()
