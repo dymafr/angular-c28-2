@@ -5,6 +5,7 @@ import { Todo } from './shared/interfaces/todo.interface';
 import {
   addTodoAction,
   deleteTodoAction,
+  fetchTodosAction,
   toggleTodoAction,
 } from './shared/store/todos.actions';
 import { selectTodosData } from './shared/store/todos.selectors';
@@ -17,6 +18,10 @@ import { selectTodosData } from './shared/store/todos.selectors';
 export class AppComponent {
   public todos$: Observable<Todo[]> = this.store.select(selectTodosData);
   public message!: string;
+
+  ngOnInit() {
+    this.store.dispatch(fetchTodosAction());
+  }
 
   constructor(private store: Store) {}
 
